@@ -20,10 +20,12 @@
                             // display array data
                             Console.WriteLine("\n ID: {0} \n Summery: {1} \n Status: {2} \n Priority: {3} \n Submitter: {4} \n Assigned: {5} \n Watching: {6} \n -------------------------------------------------------------------------------------------------------------- \n", arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6]);
                         } 
+                        sr.Close();
             } 
             else{
                 Console.WriteLine("file does not exits");
             }  
+            
         }
 
         else if(choice == "2")
