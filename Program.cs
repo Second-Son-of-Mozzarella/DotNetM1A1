@@ -28,48 +28,49 @@
 
         else if(choice == "2")
         {
-            string exit = "run";
+             Console.WriteLine("How many tickets would you like to add");
+             int response = Convert.ToInt32(Console.ReadLine());
+                    
             StreamWriter sw = new StreamWriter(file);
             int UID = 0;
-                do{
-                    //Initial Questions and loop break
-                Console.WriteLine(" Add a Ticket (Y/N)");
-                string response = Console.ReadLine().ToUpper();
-                if (response != "Y" || response != "YES"){ exit = "exit";}
+                for(int x = 0; x != response; x++){
+                    
                 
-                //creating UID
-                UID += 1;
+                    //creating UID
+                    UID += 1;
 
-                // adding summery
+                    // adding summery
 
-                Console.WriteLine("Enter a Ticket Summery");
-                string? summery = Console.ReadLine();
+                    Console.WriteLine("Enter a Ticket Summery");
+                    string? summery = Console.ReadLine();
 
-                //Ticket Status
-                Console.WriteLine("Ticket Status");
-                string? status = Console.ReadLine();
+                    //Ticket Status
+                    Console.WriteLine("Ticket Status");
+                    string? status = Console.ReadLine();
 
-                //Ticket Priority
-                Console.WriteLine("Rate Priority 1-10");
-                string? priority = Console.ReadLine();
+                    //Ticket Priority
+                    Console.WriteLine("Rate Priority 1-10");
+                    string? priority = Console.ReadLine();
 
-                //Ticket Submitter
+                    //Ticket Submitter
 
-                Console.WriteLine("Submitter Name");
-                string? name = Console.ReadLine();
+                    Console.WriteLine("Submitter Name");
+                    string? name = Console.ReadLine();
 
-                // Assigned Worker
-                Console.WriteLine("Assign a worker \n Zack  \n Jack \n Elijah");
-                string? assigned = Console.ReadLine();
-                
+                    // Assigned Worker
+                    Console.WriteLine("Assign a worker \n Zack  \n Jack \n Elijah");
+                    string? assigned = Console.ReadLine();
+                    
 
-                // Assigned watcher
-                Console.WriteLine("Assign a worker \n Jeff  \n Patrick \n Matthew");
-                string? watcher = Console.ReadLine();
+                    // Assigned watcher
+                    Console.WriteLine("Assign a worker \n Jeff  \n Patrick \n Matthew");
+                    string? watcher = Console.ReadLine();
 
-                sw.WriteLine("{0},{1},{2},{3},{4},{5},{6}", UID, summery, status, priority, name, assigned, watcher);
+                    sw.WriteLine("{0},{1},{2},{3},{4},{5},{6}", UID, summery, status, priority, name, assigned, watcher);
 
-                }while(exit == "run");
+                   
+               };
                 sw.Close();
+                 
         }
     }while(choice == "1" || choice == "2");
